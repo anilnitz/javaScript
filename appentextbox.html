@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<body>
+	<button id="myButton" class="float-left submit-button" >Home</button>
+<div class="service_box">
+       <div class="form">
+           <form class="cmxform">
+<!--                <label>EL POS :</label> -->
+               1. <input type="textbox" class="someclass"><!-- <button class="remove">Remove</button> -->
+               <button id="add">Add</button>
+           </form>
+       </div>
+   </div>
+</body>
+<script>
+    $(function() {
+        $('#add').on('click', function( e ) {
+            e.preventDefault();
+            $('<div/>').addClass( 'new-text-div' )
+            .html( $('<input type="textbox"/>').addClass( 'someclass' ) )
+            .append( $('<button/>').addClass( 'remove' ).text( 'Remove' ) )
+            .insertBefore( this );
+        });
+        $(document).on('click', 'button.remove', function( e ) {
+            e.preventDefault();
+            $(this).closest( 'div.new-text-div' ).remove();
+        });
+    });
+</script>
+<script type="text/javascript">
+    document.getElementById("myButton").onclick = function () {
+        location.href = "http://yoursite.com";
+    };
+</script>
+  
+</html>
