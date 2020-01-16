@@ -10,10 +10,13 @@
 	<button id="myButton" class="float-left submit-button" >Home</button>
 <div class="service_box">
        <div class="form">
-           <form class="cmxform">
+           <form class="cmxform" action="abc.php" method="post">
 <!--                <label>EL POS :</label> -->
-               1. <input type="textbox" class="someclass"><!-- <button class="remove">Remove</button> -->
+               1. <input type="textbox" class="someclass" name="list[]"><!-- <button class="remove">Remove</button> -->
                <button id="add">Add</button>
+               <div>
+                 <button type="submit" value="submit">Submit</button>
+               </div>
            </form>
        </div>
    </div>
@@ -23,7 +26,7 @@
         $('#add').on('click', function( e ) {
             e.preventDefault();
             $('<div/>').addClass( 'new-text-div' )
-            .html( $('<input type="textbox"/>').addClass( 'someclass' ) )
+            .html( $('<input type="textbox" name="list[]" />').addClass( 'someclass' ) )
             .append( $('<button/>').addClass( 'remove' ).text( 'Remove' ) )
             .insertBefore( this );
         });
